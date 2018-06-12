@@ -32,6 +32,8 @@ ChartHelper apex class
 Make the ContChartHelperroller class “Without Sharing“
 move the chart data initialisation logic to Chart Helper class
 make the GetInventory method @AuraEnabled
+
+
 Step 4
 
 This is probably the simplest of all the steps.. update theTestDataFactory class to handle the key requirements given..
@@ -39,19 +41,34 @@ This is probably the simplest of all the steps.. update theTestDataFactory class
 Make sure all the methods in the TestDataFactory class are Public Static and the class is marked “with sharing”
 all the construct methods should create the mentioned objects with the required fields and unique names and return the records without inserting them
 use the Insert method to call all the construct methods and then insert the records returned from those methods.
+
+
+
 Step 5
 
 Update the VerifyQuantityOrdered method in TestDataFactory with a System.Assert to compare the Quantity Ordered between the Updated product and the original product plus the incoming quantity
 run both OrderTests and Product2Extension_UnitTest and make sure both the test classes are passing  and the classes they are intended to cover has more than 75% coverage
+
+
+
 Step 6
 
 Don’t forget to create the chatter group “Inventory Announcements” .. mark it public and tick the disable auto archive checkbox and use the description text given
 update the product trigger to handle only after update and use the product helper class to handle the after update logic
 update the product helper class AfterUpdate method to use the postAlerts method which in turn will be using the AnnouncementQueueable class to process the chatter group notification
 AnnouncementQueueable is a Queueable class and uses ConnectApi to post the announcement
+
+
+
+
 Step 7
 
 Override the New and Edit buttons under the Order object to use the OrderEdit visualforce page
+
+
+
+
+
 Step 8
 
  
