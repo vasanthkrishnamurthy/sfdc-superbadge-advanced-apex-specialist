@@ -3,11 +3,16 @@ Step 1
 
 make sure you create the Custom metadata records with the exact same names given (that matches the product families)
 in the constants apex class, declare all the properties as public static
+
+
 Step 2
 
 OrderTrigger needs to handle only after update event
 OrderTrigger should use the Orderhelper internally for the rollup
 Don’t forget to remove the “with sharing” from the orderHelper class
+
+
+
 Step 3
 
 Override the Add and New button under Product object to use the visualforce page
